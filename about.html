@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" th:href="@{/css/aboutstyle.css}" />
+</head>
+<body>
+	
+	<nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#"> Online Voting</a>
+      </div>
+       <ul>
+  <li><a class="active" th:href="@{/}">Home</a></li>
+  <li><a th:href="@{/register}">New Voter Registration</a></li>
+  <li><a th:href="@{/user}">Voter Signin</a></li>
+  <li><a th:href="@{/admin}">Admin Signin</a></li>
+  <li><a th:href="@{/about}">About</a></li>
+</ul>
+    </div>
+  </nav>
+  
+	<section class="about-us">
+	 <div class="about">
+     <div class="text">
+
+<h2>About</h2>
+		<div th:if=${session.msg}>
+			<h3 th:text="${session.msg}" style="color:red"></h3>
+   		
+   		<div th:text="${@sessionUtilityBean.removeVerificationMessageFromSession()}"></div>
+   		</div>
+   		
+ <h5>Our Story</h5>
+                <p>Welcome to our website. We are dedicated to providing a seamless and secure online voting experience for every citizen. Our mission is to make the democratic process accessible, convenient, and efficient through innovative technology.</p>
+                
+	<br>	
+	</section>
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>About Us</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>About Us</h1>
+        </header>
+
+        <section class="content">
+            <div class="message">
+                <h3>Our Story</h3>
+                <p>Welcome to our website. We are dedicated to providing a seamless and secure online voting experience for every citizen. Our mission is to make the democratic process accessible, convenient, and efficient through innovative technology.</p>
+            </div>
+
+            <div class="message">
+                <h3>Our Vision</h3>
+                <p>We envision a future where every eligible voter can easily exercise their right to vote from anywhere in the world. By leveraging cutting-edge solutions, we aim to revolutionize the way people participate in the democratic process.</p>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>-->

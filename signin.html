@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+	<link rel="stylesheet" th:href="@{/css/signinstyle.css}" />
+</head>
+<body>
+	
+	
+	<nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#"> Online Voting</a>
+      </div>
+       <ul>
+  <li><a class="active" th:href="@{/}">Home</a></li>
+  <li><a th:href="@{/register}">New Voter Registration</a></li>
+  <li><a th:href="@{/user}">Voter Signin</a></li>
+  <li><a th:href="@{/admin}">Admin Signin</a></li>
+  <li><a th:href="@{/about}">About</a></li>
+</ul>
+    </div>
+  </nav>
+	
+	
+	
+	 <div class="bg-img">
+         <div class="content">
+            <header>Login Form</header>
+	
+<form th:action = "@{/dologin}" method = "post">
+
+<!--<h1>Signin</h1>-->
+<div class="field">
+                  <span class="fa fa-user"></span>
+                   <input type = "text" name = "username" placeholder="Enter Your Email Id" required>
+               </div>
+		
+		<div class="field space">
+                  <span class="fa fa-lock"></span>
+                   <input type = "password" name= "password" placeholder="Enter Your Password" required>
+                  <span class="show">SHOW</span>
+               </div>
+               
+         <div class="pass">
+                  <a href="#">Forgot Password?</a>
+               </div>
+               <div class="field">
+                  <input type = "submit" value="Signin">
+               </div>
+                     </form>
+		<div th:if="${param.error}" style="color:red">
+          Invalid username and password <br><br>
+        </div>
+                            
+         <div th:if="${param.logout}" style="color:red">
+           You have been logged out <br><br>
+          </div>
+                            
+   		 <div class="login">
+               Or login with
+            </div>
+            <div class="links">
+               <div class="facebook">
+                  <i class="fab fa-facebook-f"><span>Facebook</span></i>
+               </div>
+               <div class="instagram">
+                  <i class="fab fa-instagram"><span>Instagram</span></i>
+               </div>
+            </div>
+            <div class="signup">
+               Don't have account?
+               <a href="#">Signup Now</a>
+            </div>
+         </div>
+      </div>
+      
+
+  <!--  Email Id: <input type = "text" name = "username" placeholder="Enter Your Email Id" required><br><br>
+
+Password: <input type = "password" name= "password" placeholder="Enter Your Password" required><br><br>
+
+<input type = "submit" value="Signin">
+
+
+
+<br>
+<hr>
+<div style="color: firebrick">
+<h2>For Signing-in as a Admin </h2>
+<h3>Use</h3>
+<h3>Email Id: admin</h3>
+<h3>Password: admin</h3>
+</div>
+
+	<br>	-->
+	
+</body>
+</html>

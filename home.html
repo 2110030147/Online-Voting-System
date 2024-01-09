@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+  
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts Links For Icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+  
+  
+  <style>
+        
+        
+    </style>
+</head>
+<body>
+  <section class="center">
+    <div class="text-center">
+    
+      
+      <h1 class="font-weight-bold"></h1>
+      
+      <div th:if=${session.msg}>
+      <h3 th:text="${session.msg}" style="color:red"></h3>
+         <th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+   
+       </div>  
+  
+    </div>
+    
+  
+  </section>
+</body>
+</html>
+

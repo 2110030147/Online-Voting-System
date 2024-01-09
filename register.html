@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	
+	<link rel="stylesheet" th:href="@{/css/registerstyle.css}" />
+</head>
+<body>
+	
+	<nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#"> Online Voting</a>
+      </div>
+       <ul>
+  <li><a class="active" th:href="@{/}">Home</a></li>
+  <li><a th:href="@{/register}">New Voter Registration</a></li>
+  <li><a th:href="@{/user}">Voter Signin</a></li>
+  <li><a th:href="@{/admin}">Admin Signin</a></li>
+  <li><a th:href="@{/about}">About</a></li>
+</ul>
+    </div>
+  </nav>
+	
+	<section class="container">
+			
+		<h1>New Voter Reistration</h1>
+		
+		<div th:if=${session.msg}>
+			<h3 th:text="${session.msg}" style="color:red"></h3>
+			<th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+   		</div>
+   		
+   		
+    	
+		<form th:action="@{/createuser}" method="post" class="form">
+	
+			<div class="input-box">
+			<label>User Name</label> <input type = "text" name = "name" placeholder="Enter Your User Name" required><br><br>
+			</div>
+			
+			<div class="input-box">
+			<label>Password</label> <input type = "password" name= "password" placeholder="Enter Your Password" required><br><br>
+			</div>
+			
+			<div class="input-box">
+			<label>Email Id</label> <input type = "text" name= "email" placeholder="Enter Your Email Id" required><br><br>
+			</div>
+			
+			<div class="input-box">
+			<label>Phone No</label> <input type = "number" minlength="10" maxlength="10" name= "phone" placeholder="Enter Your Phone No" required><br><br>
+			</div>
+			
+			<button>Submit</button>
+			
+			
+		
+		</form>
+		<br>
+	
+	
+	</section>
+</body>
+</html>
